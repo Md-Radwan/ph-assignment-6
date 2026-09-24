@@ -1,8 +1,12 @@
+import { Ilibrary } from "@/types/library.type";
 import { Clock3, Flame, Star } from "lucide-react";
 import Image from 'next/image';
-import React from 'react';
 
-const LibraryCard = ({libraryInfo}) => {
+// interface IlibraryCardProps {
+//     library: Ilibrary;
+// }
+//  { libraryInfo: Ilibrary }
+const LibraryCard = ({ libraryInfo }:{ libraryInfo: Ilibrary }) => {
     return (
         <div className="w-full max-w-98.75 overflow-hidden rounded-2xl border border-[#2A2E36] bg-[#15171D] text-white">
               {/* Image */}
@@ -20,7 +24,7 @@ const LibraryCard = ({libraryInfo}) => {
               <div className="p-6">
                 {/* Muscle Groups */}
                 <div className="mb-4 flex flex-wrap gap-2">
-                  {libraryInfo.muscleGroups.slice(0, 2).map((muscle) => (
+                  {libraryInfo.muscleGroups.slice(0, 2).map((muscle: string) => (
                     <span
                       key={muscle}
                       className="rounded-full bg-[#B8F500] px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-black"
