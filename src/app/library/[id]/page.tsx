@@ -33,7 +33,7 @@ const LibraryDetailsPage = async ({ params }: ILibraryDetailsPageProps) => {
       <div className="container mx-auto min-h-screen px-4 pt-12 pb-27 text-white">
       <div className=" grid grid-cols-1 gap-8 lg:grid-cols-2">
         {/* Image */}
-        <div className="relative h-201.25 overflow-hidden rounded-2xl md:h-162.5 lg:h-201.25">
+        <div className="relative overflow-hidden rounded-2xl md:h-162.5 lg:h-201.25">
           <Image
           width={588}
           height={805}

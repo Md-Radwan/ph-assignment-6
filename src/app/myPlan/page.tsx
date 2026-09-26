@@ -58,7 +58,7 @@ const MyPlan = () => {
 
   return (
     <section>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-3 md:px-0">
         <h1
           className={`${oswald.className} mt-10 uppercase font-bold text-3xl leading-7.5`}
         >
@@ -104,7 +104,7 @@ const MyPlan = () => {
 
         {/* name of each tab group should be unique */}
         <div className="mt-10 relative">
-          <div className="flex gap-3 items-center text-right absolute right-0 top-0">
+          <div className="flex flex-col md:flex-row gap-3 items-center text-right absolute right-0 -top-7 md:top-0">
             <h2 className="text-lg font-bold w-30">Sort By</h2>
             <select
               value={sortBy}
