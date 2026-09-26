@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import logo from '@/assets/logo.png'
+import PlanBtn from "../navbarBtn/PlanBtn";
+import SaveBtn from "../navbarBtn/SaveBtn";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -19,7 +21,7 @@ const Navbar = () => {
 
   return (
     <header className="border-b border-[#1C1F26]">
-      <div className="mx-auto flex h-20 container items-center justify-between px-5 lg:px-8">
+      <div className="mx-auto flex h-20 container items-center justify-between px-5 lg:px-0">
         {/* ================= LEFT - LOGO ================= */}
         <div className="flex items-center">
           <Link
@@ -63,22 +65,10 @@ const Navbar = () => {
         {/* ================= RIGHT SIDE ================= */}
         <div className="flex items-center gap-5">
           {/* Plan */}
-          <Link href="/myPlan" className="flex items-center gap-2 cursor-pointer">
-            <span className="text-sm text-[#C7C9CE]">Plan</span>
-
-            <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-[#CCFF00] px-2 text-xs font-bold text-[#0B0D0F]">
-              0
-            </span>
-          </Link>
+          <PlanBtn/>
 
           {/* Saved */}
-          <Link href="/myPlan" className="flex items-center gap-2">
-            <span className="text-sm text-[#969AA3]">Saved</span>
-
-            <span className="flex h-6 min-w-6 items-center justify-center rounded-full border border-[#3A3E46] px-2 text-xs text-[#A7ABB4]">
-              0
-            </span>
-          </Link>
+          <SaveBtn/>
         </div>
 
         {/* ================= MOBILE MENU ================= */}

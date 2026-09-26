@@ -2,7 +2,9 @@
 
 import { Ilibrary } from "@/types/library.type";
 import Image from "next/image";
-import { Bookmark, CalendarPlus } from "lucide-react";
+import { Bookmark, CalendarPlus, Fullscreen } from "lucide-react";
+import AddToTodayButton from "@/components/libraryInfoDetails/AddToTodayButton";
+import SaveForLaterButton from "@/components/libraryInfoDetails/SaveForLaterButton";
 
 interface ILibraryDetailsPageProps {
   params: Promise<{
@@ -31,13 +33,14 @@ const LibraryDetailsPage = async ({ params }: ILibraryDetailsPageProps) => {
       <div className="container mx-auto min-h-screen px-4 pt-12 pb-27 text-white">
       <div className=" grid grid-cols-1 gap-8 lg:grid-cols-2">
         {/* Image */}
-        <div className="relative h-125 overflow-hidden rounded-2xl md:h-162.5 lg:h-201.25">
+        <div className="relative h-201.25 overflow-hidden rounded-2xl md:h-162.5 lg:h-201.25">
           <Image
+          width={588}
+          height={805}
             src={library.image}
             alt={library.name}
-            fill
             priority
-            className="object-cover"
+            className="object-cover rounded-2xl"
           />
         </div>
 
@@ -170,15 +173,9 @@ const LibraryDetailsPage = async ({ params }: ILibraryDetailsPageProps) => {
 
           {/* Buttons */}
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <button className="flex items-center gap-2 px-6 py-3 border-none bg-[#baff00] text-black text-sm font-semibold leading-5 hover:bg-[#a8e600] rounded-xl cursor-pointer">
-                <CalendarPlus/>
-              Add to today&apos;s plan
-            </button>
+            <AddToTodayButton library={library}/>
 
-            <button className="flex items-center gap-2 px-6 py-3 border-gray-700 text-gray-300 text-sm font-semibold leading-5 hover:bg-transparent rounded-xl cursor-pointer outline outline-[#374151]">
-                <Bookmark/>
-              Save for later
-            </button>
+            <SaveForLaterButton library={library}/>
           </div>
         </div>
       </div>
