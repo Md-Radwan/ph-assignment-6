@@ -1,7 +1,14 @@
 import { Ilibrary } from "@/types/library.type";
 import { Clock3, Flame, Star } from "lucide-react";
+import { Oswald } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 interface IlibraryCardProps {
   libraryInfo: Ilibrary;
@@ -36,7 +43,7 @@ const LibraryCard = ({ libraryInfo }: IlibraryCardProps) => {
           </div>
 
           {/* Workout Name */}
-          <h2 className="mb-1 text-xl font-extrabold uppercase leading-tight tracking-wide">
+          <h2 className={`${oswald.className} mb-1 text-xl font-extrabold uppercase leading-tight tracking-wide`}>
             {libraryInfo.name}
           </h2>
 

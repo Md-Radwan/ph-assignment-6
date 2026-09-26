@@ -2,6 +2,12 @@ import Image from "next/image";
 import React from "react";
 import bannerImg from "@/assets/banner.png";
 import Link from "next/link";
+import { Oswald } from "next/font/google";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 const Hero = () => {
   return (
@@ -11,7 +17,7 @@ const Hero = () => {
           <h4 className="uppercase font-bold text-[11px] leading-4 tracking-[1.1px] text-[#C2F800] text-center md:text-left">
             Workout library
           </h4>
-          <h1 className="my-5.25 w-auto md:max-w-150 font-extrabold text-[32px] md:text-[60px] md:leading-15 text-center md:text-left">
+          <h1 className={`${oswald.className} my-5.25 w-auto md:max-w-150 font-extrabold text-[32px] md:text-[60px] md:leading-15 text-center md:text-left`}>
             TRAIN WITH INTENT. LOG EVERY SET.
           </h1>
           <p className="text-[#9CA3AF] text-[16px] text-center md:text-left leading-6 w-auto md:max-w-120">
@@ -19,11 +25,11 @@ const Hero = () => {
             into today&apos;s plan, and watch the week&apos;s work add up.
           </p>
           <div className="flex justify-center md:justify-normal">
-              <Link href={'/library'}>
+              <a href="#library">
                    <button className="uppercase font-bold text-[12px] leading-4 text-black py-3 px-6 bg-[#C2F800] rounded-md mt-7 cursor-pointer">
                 browse workouts
               </button>
-              </Link>
+              </a>
           </div>
         </div>
         <div>
